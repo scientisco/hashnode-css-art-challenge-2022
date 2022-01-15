@@ -1,0 +1,354 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(45deg);}
+}
+@keyframes bend-stem1{
+    /* 0% {transform: rotate(0deg);} */
+    100% {transform: rotate(-1deg);}
+}
+@keyframes bend-stem2{
+    /* 0% {transform: rotate(0deg);} */
+    100% {transform: rotate(-1deg);}
+}
+@keyframes bend-stem3{
+    /* 0% {transform: rotate(0deg);} */
+    100% {transform: rotate(1deg);}
+}
+@keyframes leaf-rotate{
+    100% {transform: rotate(4deg);
+        transform: translateX(5px);
+    }
+}
+@keyframes moon{
+    0%{
+        box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        transform: scale(105%);
+    }
+    100%{
+        box-shadow: 0 0 10px rgba(255,255,255,0);
+        transform: scale(100%);
+    }
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width:100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(10, 36, 44);
+}
+.moon{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    clip-path: circle(40px);
+}
+.moon-shadow{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    z-index: -1;
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    animation: moon 3s linear alternate-reverse infinite;
+}
+.crater{
+    border-radius: 100%;
+    background: rgba(143, 143, 143, 0.432);
+    height: 4px;
+    width: 14px;
+    position: absolute;
+}
+.crater1{
+    left: 50px;
+    top: 30px;
+}
+.crater2{
+    right: 4px;
+    top: 60px;
+}
+.crater3{
+    left: -2px;
+    bottom: 40px;
+}
+.flower{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+    margin: 50px 50%;
+}
+.logo-flower{
+    background: #2962FF;
+    width: 45px;
+    height: 45px;
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px;   */
+    position: absolute;
+    z-index: 2;
+    
+}
+.circle{
+    border-radius: 50%;
+    background: white;
+    height: 20px;
+    width: 20px;
+    
+}
+
+.logo-flower1{
+    top: 146px;
+    left: 90px;
+    background: rgb(255, 0, 221);
+    animation: rotate 5s linear alternate-reverse infinite;
+}
+.logo-flower2{
+    top: 85px;
+    left: 140px;
+    transform: rotate(60deg);
+    animation: rotate 5s linear 0.3s alternate-reverse infinite;
+}
+.logo-flower3{
+    left: 150px;
+    top: 170px;
+    transform: rotate(-35deg);
+    background: rgb(255, 136, 0);
+    animation: rotate 5s linear 0.1s alternate-reverse infinite;
+
+}
+.logo-flower4{
+    top: 156px;
+    left: 200px;
+    transform: rotate(-30deg);
+    background: red;
+    animation: rotate 5s linear alternate-reverse 2s infinite;
+}
+.stem{
+    border: solid #63B235;
+    border-radius: 0 20px/60px;
+    left: 20px;
+    height: 100px;
+    width: 20px;
+    position: absolute;
+}
+.stem-leaf1{
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    animation: bend-stem1 5s linear alternate-reverse infinite;
+}
+.stem-leaf2{
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    animation: bend-stem2 5s linear alternate-reverse infinite;
+}
+.stem-leaf3{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    animation: bend-stem3 5s linear alternate-reverse infinite;
+}
+.stem-leaf4{
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    animation: bend-stem3 5s linear alternate-reverse infinite;
+}
+.stem.stem1{
+    border-radius: 20px/35px;
+    border-left: hidden;
+    border-bottom: hidden;
+    top: 170px;
+    left: 140px;
+    height: 160px;
+    width: 20px;
+    transform: rotate(-20deg);
+}
+.stem.stem2{
+    border-radius: 0 50% ;
+    border-top: hidden;
+    border-left: hidden;
+    border-bottom: hidden;
+    top: 100px;
+    left: 154px;
+    height: 250px;
+    width: 20px;
+    animation: bend-stem2 5s linear alternate-reverse infinite;
+
+
+}
+.stem.stem3{
+    border-radius: 0 20px/60px ;
+    border-left: hidden;
+    border-bottom: hidden;
+    top: 200px;
+    left: 154px;
+    height: 100px;
+    width: 20px;
+    transform: rotate(10deg);
+}
+.stem.stem4{
+    border-radius: 90% 0 0 0;
+    border-right: hidden;
+    border-bottom: hidden;
+    border-top:  hidden;
+    top: 180px;
+    left: 180px;
+    height: 130px;
+    width: 20px;
+    transform: rotate(20deg);
+}
+
+.leaf{
+    width: 10px;
+    height: 10px;
+    border-radius: 0 80%;
+    background: #1c4b01;
+    position: relative;
+    z-index: 3;
+}
+.leaf1{
+    transform: rotate(-20deg);
+    position: absolute;
+    left: 128px;
+    top: 188px;
+    animation: leaf-rotate 3s linear alternate-reverse infinite;
+}
+.leaf2{
+    transform: rotate(90deg);
+    position: absolute;
+    left: 152px;
+    top: 220px;
+
+}
+.leaf3{
+    transform: rotate(90deg);
+    position: absolute;
+    left: 176px;
+    top: 220px;
+}
+.leaf4{
+    transform: rotate(10deg);
+    position: absolute;
+    left: 166px;
+    top: 230px;
+}
+.leaf5{
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 178px;
+    top: 250px;
+    animation: rotate-leaf 5s linear alternate-reverse infinite;
+
+}
+
+.leaf6{
+    transform: rotate(-75deg);
+    position: absolute;
+    left: 196px;
+    top: 210px;
+}
+.leaf7{
+    transform: rotate(-60deg);
+    position: absolute;
+    left: 170px;
+    top: 129px;
+    animation: rotate-leaf 5s linear alternate-reverse infinite;
+}
+.leaf8{
+    transform: rotate(-10deg);
+    position: absolute;
+    left: 160px;
+    top: 144px;
+}
+.hashnode{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 124px;
+    top: 283px;
+    z-index: 4;
+}
+.hashnode .logo{
+    background: #2962FF;
+    width: 12px;
+    height: 12px;
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    margin-right: 6px;
+}
+.logo-circle{
+    border-radius: 50%;
+    background: white;
+    height: 6px;
+    width: 6px;
+}
+.text{
+ color: white;
+}
+.vase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid; */
+    position: absolute;
+    left: 0px;
+    top: 300px;
+}
+.vase-top{
+    width: 120px;
+    height: 20px;
+    background: #801F00;
+    border: solid 0.5px black;
+    border-radius: 4px;
+    position: relative;
+    top: -58px;
+    left: 110px;
+
+}
+.vase-body{
+    border-top: 100px solid #801F00;
+    border-left: solid 20px transparent;
+    border-right: solid 20px transparent;
+    border-radius: 0 0 30px 30px;
+    height: 0;
+    width: 100px;
+}
+.shadow{
+    height: 50px;
+    width: 120px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    filter: blur(20px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    position: absolute;
+    left: 110px;
+    top: 70px
+}
